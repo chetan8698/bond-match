@@ -1,0 +1,234 @@
+import React, { useEffect, useState } from 'react';
+import { ArrowLeft, Heart, Star, Award } from 'lucide-react';
+import { QuizResults, UserProfile } from '../types';
+
+interface ResultsPageProps {
+  results: QuizResults;
+  profile: UserProfile | null;
+  onBack: () => void;
+}
+
+const traitInfo = {
+  trust: { 
+    name: 'Trust', 
+    color: 'from-blue-400 to-blue-600',
+    description: 'Reliability and faith in relationships'
+  },
+  empathy: { 
+    name: 'Empathy', 
+    color: 'from-green-400 to-green-600',
+    description: 'Understanding and sharing feelings'
+  },
+  support: { 
+    name: 'Support', 
+    color: 'from-yellow-400 to-yellow-600',
+    description: 'Providing encouragement and assistance'
+  },
+  equality: { 
+    name: 'Equality', 
+    color: 'from-purple-400 to-purple-600',
+    description: 'Fairness and balanced partnerships'
+  },
+  respect: { 
+    name: 'Respect', 
+    color: 'from-indigo-400 to-indigo-600',
+    description: 'Honoring boundaries and differences'
+  },
+  communication: { 
+    name: 'Communication', 
+    color: 'from-pink-400 to-pink-600',
+    description: 'Open and effective dialogue'
+  },
+  independence: { 
+    name: 'Independence', 
+    color: 'from-teal-400 to-teal-600',
+    description: 'Maintaining individuality in relationships'
+  },
+  forgiveness: { 
+    name: 'Forgiveness', 
+    color: 'from-orange-400 to-orange-600',
+    description: 'Ability to let go and move forward'
+  },
+  accountability: { 
+    name: 'Accountability', 
+    color: 'from-red-400 to-red-600',
+    description: 'Taking responsibility for actions'
+  },
+  intimacy: { 
+    name: 'Intimacy', 
+    color: 'from-rose-400 to-rose-600',
+    description: 'Emotional closeness and connection'
+  }
+};
+
+const ResultsPage: React.FC<ResultsPageProps> = ({ results, profile, onBack }) => {
+  const [animatedScores, setAnimatedScores] = useState<Record<string, number>>({});
+
+  useEffect(() => {
+    // Animate progress bars
+    const timer = setTimeout(() => {
+      setAnimatedScores(results);
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, [results]);
+
+  const getScoreLevel = (score: number) => {
+    if (score >= 80) return { level: 'Excellent', color: 'text-green-600' };
+    if (score >= 60) return { level: 'Good', color: 'text-blue-600' };
+    if (score >= 40) return { level: 'Moderate', color: 'text-yellow-600' };
+    return { level: 'Needs Growth', color: 'text-orange-600' };
+  };
+
+  const averageScore = Math.round(
+    Object.values(results).reduce((sum, score) => sum + score, 0) / Object.keys(results).length
+  );
+
+  const topTraits = Object.entries(results)
+    .sort(([, a], [, b]) => b - a)
+    .slice(0, 3);
+
+  const overallAssessment = () => {
+    if (averageScore >= 80) return {
+      title: "Exceptional Relationship Potential! 🌟",
+      message: "You demonstrate outstanding qualities for building strong, lasting relationships.",
+      color: "from-green-400 to-emerald-600"
+    };
+    if (averageScore >= 65) return {
+      title: "Strong Relationship Foundation! 💪",
+      message: "You have solid relationship skills with room for continued growth.",
+      color: "from-blue-400 to-blue-600"
+    };
+    if (averageScore >= 50) return {
+      title: "Good Relationship Potential! 👍",
+      message: "You're on the right track with opportunities to strengthen key areas.",
+      color: "from-purple-400 to-purple-600"
+    };
+    return {
+      title: "Growing Relationship Skills! 🌱",
+      message: "You're building important relationship foundations with room for development.",
+      color: "from-orange-400 to-orange-600"
+    };
+  };
+
+  const assessment = overallAssessment();
+
+  return (
+    <div className="max-w-6xl mx-auto px-4 py-8">
+      {/* Header */}
+      <div className="flex items-center justify-between mb-8">
+        <button
+          onClick={onBack}
+          className="flex items-center space-x-2 text-gray-600 hover:text-pink-600 transition-colors duration-200"
+        >
+          <ArrowLeft className="h-5 w-5" />
+          <span>Back to Home</span>
+        </button>
+      </div>
+
+      {/* Results Header */}
+      <div className="text-center mb-12">
+        <h1 className="text-4xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent mb-4">
+          Your MatchBond Results
+        </h1>
+        {profile && (
+          <p className="text-xl text-gray-600">
+            Compatibility analysis with <span className="font-semibold text-pink-600">{profile.name}</span>
+          </p>
+        )}
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Overall Score */}
+        <div className="lg:col-span-1">
+          <div className="bg-white rounded-2xl shadow-lg p-8 text-center sticky top-8">
+            <div className={`w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-r ${assessment.color} flex items-center justify-center`}>
+              <span className="text-4xl font-bold text-white">{averageScore}%</span>
+            </div>
+            
+            <h2 className="text-2xl font-bold text-gray-800 mb-2">Overall Score</h2>
+            <p className={`text-lg font-semibold mb-4 ${getScoreLevel(averageScore).color}`}>
+              {getScoreLevel(averageScore).level}
+            </p>
+            
+            <div className={`bg-gradient-to-r ${assessment.color} text-white p-4 rounded-lg mb-6`}>
+              <h3 className="font-bold mb-2">{assessment.title}</h3>
+              <p className="text-sm opacity-90">{assessment.message}</p>
+            </div>
+
+            <div className="space-y-3">
+              <h3 className="font-semibold text-gray-800">Top Strengths:</h3>
+              {topTraits.map(([trait, score], index) => (
+                <div key={trait} className="flex items-center space-x-2">
+                  <Star className="h-5 w-5 text-yellow-500" fill="currentColor" />
+                  <span className="text-sm">{traitInfo[trait as keyof typeof traitInfo].name}</span>
+                  <span className="text-sm font-semibold text-gray-600">({score}%)</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Detailed Scores */}
+        <div className="lg:col-span-2">
+          <div className="bg-white rounded-2xl shadow-lg p-8">
+            <h2 className="text-2xl font-bold text-gray-800 mb-8">Detailed Analysis</h2>
+            
+            <div className="space-y-6">
+              {Object.entries(results).map(([trait, score]) => {
+                const info = traitInfo[trait as keyof typeof traitInfo];
+                const animatedScore = animatedScores[trait] || 0;
+                const scoreLevel = getScoreLevel(score);
+                
+                return (
+                  <div key={trait} className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <h3 className="text-lg font-semibold text-gray-800">{info.name}</h3>
+                        <p className="text-sm text-gray-600">{info.description}</p>
+                      </div>
+                      <div className="text-right">
+                        <span className="text-2xl font-bold text-gray-800">{score}%</span>
+                        <p className={`text-sm font-medium ${scoreLevel.color}`}>
+                          {scoreLevel.level}
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div className="w-full bg-gray-200 rounded-full h-3">
+                      <div
+                        className={`bg-gradient-to-r ${info.color} h-3 rounded-full transition-all duration-1000 ease-out`}
+                        style={{ width: `${animatedScore}%` }}
+                      />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Action Cards */}
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-gradient-to-r from-pink-500 to-purple-600 text-white p-6 rounded-2xl">
+              <Heart className="h-8 w-8 mb-4" />
+              <h3 className="text-xl font-bold mb-2">Keep Growing!</h3>
+              <p className="text-pink-100">
+                Relationships are a journey of continuous growth and discovery.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-6 rounded-2xl">
+              <Award className="h-8 w-8 mb-4" />
+              <h3 className="text-xl font-bold mb-2">Share Your Results</h3>
+              <p className="text-blue-100">
+                Share your compatibility insights with potential matches.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ResultsPage;

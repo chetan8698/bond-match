@@ -1,0 +1,115 @@
+import React, { useState } from 'react';
+import { Heart } from 'lucide-react';
+import HomePage from './components/HomePage';
+import ProfilePage from './components/ProfilePage';
+import QuizPage from './components/QuizPage';
+import ResultsPage from './components/ResultsPage';
+import { UserProfile } from './types';
+
+function App() {
+  const [currentPage, setCurrentPage] = useState<'home' | 'profile' | 'quiz' | 'results'>('home');
+  const [selectedProfile, setSelectedProfile] = useState<UserProfile | null>(null);
+  const [quizResults, setQuizResults] = useState<any>(null);
+  const [likedProfiles, setLikedProfiles] = useState<number[]>([]);
+
+  const handleProfileSelect = (profile: UserProfile) => {
+    setSelectedProfile(profile);
+    setCurrentPage('profile');
+  };
+
+  const handleStartQuiz = () => {
+    setCurrentPage('quiz');
+  };
+
+  const handleQuizComplete = (results: any) => {
+    setQuizResults(results);
+    setCurrentPage('results');
+  };
+
+  const handleBackToHome = () => {
+    setCurrentPage('home');
+    setSelectedProfile(null);
+    setQuizResults(null);
+  };
+
+  const handleLikeProfile = (profileId: number) => {
+    setLikedProfiles(prev => 
+      prev.includes(profileId) 
+        ? prev.filter(id => id !== profileId)
+        : [...prev, profileId]
+    );
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-50">
+      {/* Navigation */}
+      <nav className="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div 
+              className="flex items-center space-x-2 cursor-pointer hover:scale-105 transition-transform duration-200"
+              onClick={handleBackToHome}
+            >
+              <Heart className="h-8 w-8 text-pink-500" fill="currentColor" />
+              <span className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
+                MatchBond
+              </span>
+            </div>
+            <div className="flex space-x-8">
+              <button 
+                onClick={handleBackToHome}
+                className="text-gray-700 hover:text-pink-600 font-medium transition-colors duration-200"
+              >
+                Home
+              </button>
+              <button className="text-gray-700 hover:text-pink-600 font-medium transition-colors duration-200">
+                About
+              </button>
+              <button className="text-gray-700 hover:text-pink-600 font-medium transition-colors duration-200">
+                My Profile
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Page Content */}
+      <main className="min-h-screen">
+        {currentPage === 'home' && (
+          <HomePage 
+            onProfileSelect={handleProfileSelect}
+            likedProfiles={likedProfiles}
+            onLikeProfile={handleLikeProfile}
+          />
+        )}
+        
+        {currentPage === 'profile' && selectedProfile && (
+          <ProfilePage 
+            profile={selectedProfile}
+            onStartQuiz={handleStartQuiz}
+            onBack={handleBackToHome}
+            isLiked={likedProfiles.includes(selectedProfile.id)}
+            onLike={() => handleLikeProfile(selectedProfile.id)}
+          />
+        )}
+        
+        {currentPage === 'quiz' && (
+          <QuizPage 
+            onComplete={handleQuizComplete}
+            onBack={() => setCurrentPage('profile')}
+          />
+        )}
+        
+        {currentPage === 'results' && quizResults && (
+          <ResultsPage 
+            results={quizResults}
+            profile={selectedProfile}
+            onBack={handleBackToHome}
+          />
+        )}
+      </main>
+    </div>
+  );
+}
+
+export default App;

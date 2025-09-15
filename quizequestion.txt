@@ -1,0 +1,1510 @@
+import { QuizQuestion } from '../types';
+
+export const quizQuestions: QuizQuestion[] = [
+  // Support & Encouragement
+  {
+    id: 1,
+    category: "Support & Encouragement",
+    question: "A close friend is starting a new, demanding job. They're feeling overwhelmed and doubt their ability to succeed. Which response best embodies effective support?",
+    options: [
+      {
+        label: "Don't worry, you'll be fine. Everyone feels that way at first.",
+        value: "A",
+        score: { support: 4, empathy: 3 }
+      },
+      {
+        label: "I've seen you handle tough situations before; this is no different.",
+        value: "B",
+        score: { support: 6, trust: 5 }
+      },
+      {
+        label: "Remember that time you aced that difficult project? You have the skills for this, and I'm here if you need to vent.",
+        value: "C",
+        score: { support: 9, empathy: 8, trust: 7 }
+      },
+      {
+        label: "Why are you so stressed? Just focus on the positive aspects of the new job.",
+        value: "D",
+        score: { support: 2, empathy: 1 }
+      }
+    ]
+  },
+  {
+    id: 2,
+    category: "Support & Encouragement",
+    question: "Your partner fails at an important task they've been working on for months. How do you respond in a way that promotes their resilience?",
+    options: [
+      {
+        label: "It's not a big deal; it was a long shot anyway.",
+        value: "A",
+        score: { support: 3, empathy: 2 }
+      },
+      {
+        label: "I'm disappointed for you, but let's figure out what went wrong.",
+        value: "B",
+        score: { support: 6, accountability: 5, communication: 6 }
+      },
+      {
+        label: "I know this feels terrible, but I'm proud of how hard you worked. What's the next step?",
+        value: "C",
+        score: { support: 9, empathy: 8, accountability: 6 }
+      },
+      {
+        label: "Let's forget about it and do something fun to take your mind off things.",
+        value: "D",
+        score: { support: 4, empathy: 3 }
+      }
+    ]
+  },
+  {
+    id: 3,
+    category: "Support & Encouragement",
+    question: "Your friend confides in you about their anxiety regarding a public speaking engagement. What is the most supportive and empowering response?",
+    options: [
+      {
+        label: "Just pretend the audience isn't there; it works for me.",
+        value: "A",
+        score: { support: 4, empathy: 3 }
+      },
+      {
+        label: "You're a great speaker, so you have nothing to worry about.",
+        value: "B",
+        score: { support: 5, trust: 4 }
+      },
+      {
+        label: "I understand you're feeling anxious. What's the most helpful thing I can do for you right now?",
+        value: "C",
+        score: { support: 9, empathy: 9, communication: 7 }
+      },
+      {
+        label: "Everyone gets nervous. Just take a deep breath and push through it.",
+        value: "D",
+        score: { support: 3, empathy: 2 }
+      }
+    ]
+  },
+  {
+    id: 4,
+    category: "Support & Encouragement",
+    question: "A family member is trying to develop a new healthy habit. They miss a day and feel discouraged. How do you encourage them without enabling self-criticism?",
+    options: [
+      {
+        label: "A single slip-up won't ruin your progress; just get back on track tomorrow.",
+        value: "A",
+        score: { support: 6, forgiveness: 5 }
+      },
+      {
+        label: "See? I told you this would be difficult.",
+        value: "B",
+        score: { support: 1, empathy: 1 }
+      },
+      {
+        label: "It's okay; you're just not ready for this right now.",
+        value: "C",
+        score: { support: 3, empathy: 4 }
+      },
+      {
+        label: "Don't beat yourself up. Let's celebrate the progress you've made so far and make a new plan.",
+        value: "D",
+        score: { support: 9, empathy: 8, forgiveness: 7 }
+      }
+    ]
+  },
+  {
+    id: 5,
+    category: "Support & Encouragement",
+    question: "Your partner has a great idea for a new project but is hesitant to pursue it due to self-doubt. What's the most psychologically sound way to support them?",
+    options: [
+      {
+        label: "That's a fantastic idea! You're going to be so successful.",
+        value: "A",
+        score: { support: 6, trust: 5 }
+      },
+      {
+        label: "Are you sure you have the time and energy for this right now?",
+        value: "B",
+        score: { support: 3, communication: 4 }
+      },
+      {
+        label: "What's the worst that could happen? It's worth a try.",
+        value: "C",
+        score: { support: 5, independence: 6 }
+      },
+      {
+        label: "Let's talk through the first few steps. I believe in your ability to figure this out, and I'm here to help.",
+        value: "D",
+        score: { support: 9, trust: 8, communication: 8 }
+      }
+    ]
+  },
+
+  // Empathy & Compassion
+  {
+    id: 6,
+    category: "Empathy & Compassion",
+    question: "Your friend is crying about a problem that seems minor to you. What is the most empathetic response?",
+    options: [
+      {
+        label: "It's not that bad. You'll get over it.",
+        value: "A",
+        score: { empathy: 2, support: 2 }
+      },
+      {
+        label: "I understand how you feel; I went through something similar.",
+        value: "B",
+        score: { empathy: 6, support: 5 }
+      },
+      {
+        label: "That sounds incredibly painful. I can't imagine what that must be like for you.",
+        value: "C",
+        score: { empathy: 9, support: 8, respect: 7 }
+      },
+      {
+        label: "Why are you so upset? Just try to look on the bright side.",
+        value: "D",
+        score: { empathy: 1, support: 2 }
+      }
+    ]
+  },
+  {
+    id: 7,
+    category: "Empathy & Compassion",
+    question: "Your partner is exhausted and frustrated after a long day at work. You're also tired. What's the most compassionate action?",
+    options: [
+      {
+        label: "Tell them you're also tired and need a break.",
+        value: "A",
+        score: { empathy: 4, communication: 5, equality: 3 }
+      },
+      {
+        label: "Give them space and let them decompress on their own.",
+        value: "B",
+        score: { empathy: 6, independence: 7, respect: 6 }
+      },
+      {
+        label: "Acknowledge their frustration and offer to take on a household chore they usually do.",
+        value: "C",
+        score: { empathy: 9, support: 8, equality: 7 }
+      },
+      {
+        label: "Suggest they stop complaining and relax.",
+        value: "D",
+        score: { empathy: 1, support: 1, respect: 2 }
+      }
+    ]
+  },
+  {
+    id: 8,
+    category: "Empathy & Compassion",
+    question: "A family member expresses a political opinion you strongly disagree with. How do you respond with compassion?",
+    options: [
+      {
+        label: "Your opinion is wrong, and here's why...",
+        value: "A",
+        score: { empathy: 2, respect: 1, communication: 3 }
+      },
+      {
+        label: "I can't believe you think that. It's so ignorant.",
+        value: "B",
+        score: { empathy: 1, respect: 1, communication: 1 }
+      },
+      {
+        label: "I don't agree with you, but I'd like to understand what led you to that viewpoint.",
+        value: "C",
+        score: { empathy: 9, respect: 9, communication: 8 }
+      },
+      {
+        label: "Let's agree to disagree and change the subject.",
+        value: "D",
+        score: { empathy: 5, respect: 6, communication: 4 }
+      }
+    ]
+  },
+  {
+    id: 9,
+    category: "Empathy & Compassion",
+    question: "Someone tells you they are struggling with mental health issues. Which response demonstrates the most empathy?",
+    options: [
+      {
+        label: "Have you tried exercising more? That helps me.",
+        value: "A",
+        score: { empathy: 4, support: 5 }
+      },
+      {
+        label: "You seem fine to me; just be positive.",
+        value: "B",
+        score: { empathy: 1, support: 2 }
+      },
+      {
+        label: "Thank you for sharing that with me. What you're going through sounds incredibly difficult.",
+        value: "C",
+        score: { empathy: 9, support: 8, trust: 7, intimacy: 8 }
+      },
+      {
+        label: "Just try to be stronger; everyone has bad days.",
+        value: "D",
+        score: { empathy: 2, support: 2 }
+      }
+    ]
+  },
+  {
+    id: 10,
+    category: "Empathy & Compassion",
+    question: "Your partner is sad about the death of their pet, which you never met. What is the most compassionate and validating statement?",
+    options: [
+      {
+        label: "It was just an animal; you'll get another one.",
+        value: "A",
+        score: { empathy: 1, support: 1, respect: 1 }
+      },
+      {
+        label: "I'm sorry for your loss. I know how much they meant to you.",
+        value: "B",
+        score: { empathy: 9, support: 8, respect: 7 }
+      },
+      {
+        label: "I remember when my pet died; it was so sad.",
+        value: "C",
+        score: { empathy: 5, support: 5 }
+      },
+      {
+        label: "At least they had a long, good life with you.",
+        value: "D",
+        score: { empathy: 4, support: 4 }
+      }
+    ]
+  },
+
+  // Shared Values & Goals
+  {
+    id: 11,
+    category: "Shared Values & Goals",
+    question: "You and your partner are discussing a major life decision, like buying a home. You discover a significant difference in what you both prioritize. How do you approach this to maintain shared values?",
+    options: [
+      {
+        label: "Insist on your priority because you believe it's more logical.",
+        value: "A",
+        score: { equality: 2, respect: 2, communication: 3 }
+      },
+      {
+        label: "Immediately compromise by meeting in the middle.",
+        value: "B",
+        score: { equality: 6, communication: 5 }
+      },
+      {
+        label: "Dismiss the importance of the decision and postpone it.",
+        value: "C",
+        score: { accountability: 2, communication: 2 }
+      },
+      {
+        label: "Acknowledge the difference and explore the underlying reasons and long-term goals that inform each of your priorities.",
+        value: "D",
+        score: { communication: 9, respect: 8, equality: 8, intimacy: 7 }
+      }
+    ]
+  },
+  {
+    id: 12,
+    category: "Shared Values & Goals",
+    question: "Your partner's career success is a major goal, and they've been working extremely hard. You feel neglected. How do you address this while honoring your shared goals?",
+    options: [
+      {
+        label: "Tell them their work is more important than your relationship.",
+        value: "A",
+        score: { support: 3, equality: 2, respect: 3 }
+      },
+      {
+        label: "Express your feelings of neglect and ask them to choose between you and their career.",
+        value: "B",
+        score: { communication: 4, equality: 3, support: 2 }
+      },
+      {
+        label: "Acknowledge their hard work and career importance, but express your needs and propose a plan for dedicated quality time.",
+        value: "C",
+        score: { communication: 9, support: 8, equality: 8, respect: 7 }
+      },
+      {
+        label: "Start a new demanding hobby of your own to make the relationship more 'equal.'",
+        value: "D",
+        score: { independence: 5, communication: 2, equality: 4 }
+      }
+    ]
+  },
+  {
+    id: 13,
+    category: "Shared Values & Goals",
+    question: "You and your partner have different ideas about how to raise your future children. What is the most constructive way to resolve this?",
+    options: [
+      {
+        label: "Take a 'my way or the highway' stance.",
+        value: "A",
+        score: { respect: 1, equality: 1, communication: 2 }
+      },
+      {
+        label: "Find a parenting book or a parenting style and agree to follow it strictly.",
+        value: "B",
+        score: { communication: 5, accountability: 4 }
+      },
+      {
+        label: "Acknowledge the differences and create a new, blended philosophy based on your collective core values for your family.",
+        value: "C",
+        score: { communication: 9, respect: 8, equality: 8, intimacy: 7 }
+      },
+      {
+        label: "Decide to let each of you handle different aspects of the children's lives without interference.",
+        value: "D",
+        score: { independence: 6, equality: 5, communication: 3 }
+      }
+    ]
+  },
+  {
+    id: 14,
+    category: "Shared Values & Goals",
+    question: "You want to save money for a vacation, but your partner prefers to spend it on daily luxuries. What's the best approach for a team?",
+    options: [
+      {
+        label: "Hide the money you're saving and continue to do so on your own.",
+        value: "A",
+        score: { trust: 2, communication: 2, equality: 3 }
+      },
+      {
+        label: "Tell your partner that their spending habits are immature.",
+        value: "B",
+        score: { respect: 2, communication: 3, equality: 2 }
+      },
+      {
+        label: "Create a joint budget that allocates funds for both savings and smaller, agreed-upon 'fun' purchases.",
+        value: "C",
+        score: { communication: 9, equality: 9, respect: 7, accountability: 7 }
+      },
+      {
+        label: "Give in and decide to enjoy the daily luxuries, as you can always save later.",
+        value: "D",
+        score: { support: 4, equality: 3, accountability: 2 }
+      }
+    ]
+  },
+  {
+    id: 15,
+    category: "Shared Values & Goals",
+    question: "What's the most effective way to strengthen shared values and goals in a long-term relationship?",
+    options: [
+      {
+        label: "Wait for life to present challenges and solve them together.",
+        value: "A",
+        score: { support: 5, accountability: 4 }
+      },
+      {
+        label: "Have a one-time discussion about your long-term goals and never revisit them.",
+        value: "B",
+        score: { communication: 3, accountability: 3 }
+      },
+      {
+        label: "Regularly check in with each other to discuss and realign your individual and collective aspirations and how they've changed.",
+        value: "C",
+        score: { communication: 9, intimacy: 8, respect: 7, accountability: 8 }
+      },
+      {
+        label: "Assume you and your partner are on the same page and never need to explicitly talk about it.",
+        value: "D",
+        score: { communication: 2, trust: 3 }
+      }
+    ]
+  },
+
+  // Intimacy (Emotional)
+  {
+    id: 16,
+    category: "Intimacy (Emotional)",
+    question: "Your partner seems withdrawn and distant but says 'nothing's wrong' when you ask. What's the best way to foster emotional intimacy?",
+    options: [
+      {
+        label: "Give them space and don't bring it up again.",
+        value: "A",
+        score: { independence: 6, respect: 5, intimacy: 3 }
+      },
+      {
+        label: "Get upset and demand to know what's going on.",
+        value: "B",
+        score: { communication: 3, respect: 2, intimacy: 2 }
+      },
+      {
+        label: "Respect their response but gently let them know you're there if they ever want to talk, without pressure.",
+        value: "C",
+        score: { intimacy: 9, respect: 8, trust: 7, support: 7 }
+      },
+      {
+        label: "Immediately assume they are mad at you and act defensively.",
+        value: "D",
+        score: { communication: 2, trust: 2, intimacy: 1 }
+      }
+    ]
+  },
+  {
+    id: 17,
+    category: "Intimacy (Emotional)",
+    question: "You have a difficult day at work and feel overwhelmed. How can you share this with your partner to build intimacy, rather than just venting?",
+    options: [
+      {
+        label: "Tell them about your day and immediately ask for their advice.",
+        value: "A",
+        score: { communication: 6, support: 5, intimacy: 4 }
+      },
+      {
+        label: "Say, 'I had a terrible day, and I just feel so drained. I'd love to just sit with you for a bit.'",
+        value: "C",
+        score: { intimacy: 9, communication: 8, vulnerability: 8, support: 6 }
+      },
+      {
+        label: "Don't share anything to avoid burdening them.",
+        value: "C",
+        score: { independence: 4, intimacy: 2, trust: 3 }
+      },
+      {
+        label: "Express your frustration and hope they can read your mind and know what you need.",
+        value: "D",
+        score: { communication: 2, intimacy: 3, support: 2 }
+      }
+    ]
+  },
+  {
+    id: 18,
+    category: "Intimacy (Emotional)",
+    question: "What's a key psychological component of building emotional intimacy?",
+    options: [
+      {
+        label: "Sharing your biggest secrets.",
+        value: "A",
+        score: { intimacy: 5, trust: 6 }
+      },
+      {
+        label: "Being completely transparent about every thought and feeling.",
+        value: "B",
+        score: { intimacy: 4, communication: 5, independence: 2 }
+      },
+      {
+        label: "The vulnerability of sharing fears, insecurities, and personal struggles with the trust that they will be met with acceptance.",
+        value: "C",
+        score: { intimacy: 9, trust: 9, vulnerability: 9, respect: 7 }
+      },
+      {
+        label: "Making sure you agree on every single topic.",
+        value: "D",
+        score: { equality: 3, intimacy: 2, respect: 2 }
+      }
+    ]
+  },
+  {
+    id: 19,
+    category: "Intimacy (Emotional)",
+    question: "Your partner shares a past trauma with you. What is the most intimate and supportive response?",
+    options: [
+      {
+        label: "Wow, that's intense. I'm glad you're over it now.",
+        value: "A",
+        score: { support: 3, intimacy: 3, empathy: 2 }
+      },
+      {
+        label: "I'm so sorry that happened to you. Thank you for trusting me with that part of your story.",
+        value: "B",
+        score: { intimacy: 9, empathy: 9, trust: 8, support: 8 }
+      },
+      {
+        label: "You should see a therapist about that.",
+        value: "C",
+        score: { support: 4, intimacy: 2, empathy: 3 }
+      },
+      {
+        label: "I've been through something similar; let me tell you my story.",
+        value: "D",
+        score: { empathy: 5, intimacy: 4, support: 4 }
+      }
+    ]
+  },
+  {
+    id: 20,
+    category: "Intimacy (Emotional)",
+    question: "How do you maintain emotional intimacy during a long-distance relationship?",
+    options: [
+      {
+        label: "Only talk about things that are happening in the present.",
+        value: "A",
+        score: { communication: 4, intimacy: 3 }
+      },
+      {
+        label: "Avoid difficult conversations to prevent conflict.",
+        value: "B",
+        score: { communication: 2, intimacy: 2, trust: 2 }
+      },
+      {
+        label: "Schedule regular, dedicated time to talk about your feelings, fears, and hopes for the future, in addition to daily check-ins.",
+        value: "C",
+        score: { intimacy: 9, communication: 9, trust: 7, commitment: 8 }
+      },
+      {
+        label: "Just assume you'll pick up where you left off when you see each other next.",
+        value: "D",
+        score: { intimacy: 2, communication: 2, trust: 3 }
+      }
+    ]
+  },
+
+  // Independence & Individuality
+  {
+    id: 21,
+    category: "Independence & Individuality",
+    question: "Your partner takes up a new hobby you have no interest in. What is the most supportive response that honors their individuality?",
+    options: [
+      {
+        label: "That sounds boring. Why don't we do something we can both enjoy?",
+        value: "A",
+        score: { independence: 2, respect: 2, support: 3 }
+      },
+      {
+        label: "That's great! Tell me about it. I'd love to hear how it's going.",
+        value: "B",
+        score: { independence: 9, support: 8, respect: 8, interest: 7 }
+      },
+      {
+        label: "I'll try it with you, even though I know I won't like it.",
+        value: "C",
+        score: { support: 6, independence: 4, sacrifice: 5 }
+      },
+      {
+        label: "Why are you spending so much time on that?",
+        value: "D",
+        score: { independence: 1, respect: 2, support: 2 }
+      }
+    ]
+  },
+  {
+    id: 22,
+    category: "Independence & Individuality",
+    question: "You and your partner are invited to two different events on the same night. What's the best way to navigate this while maintaining individuality?",
+    options: [
+      {
+        label: "Insist they go to your event with you.",
+        value: "A",
+        score: { independence: 2, equality: 3, respect: 2 }
+      },
+      {
+        label: "Suggest you both skip your respective events to spend time together.",
+        value: "B",
+        score: { independence: 3, support: 4, togetherness: 6 }
+      },
+      {
+        label: "Decide to attend your separate events and make a plan to catch up later.",
+        value: "C",
+        score: { independence: 9, respect: 8, trust: 7, communication: 6 }
+      },
+      {
+        label: "Flip a coin to see which event you'll both attend.",
+        value: "D",
+        score: { equality: 5, independence: 4, decision_making: 3 }
+      }
+    ]
+  },
+  {
+    id: 23,
+    category: "Independence & Individuality",
+    question: "What is a key psychological sign of a healthy relationship's balance between togetherness and individuality?",
+    options: [
+      {
+        label: "The couple does everything together and shares all the same friends.",
+        value: "A",
+        score: { independence: 2, togetherness: 7, balance: 2 }
+      },
+      {
+        label: "Each partner has their own separate friends and hobbies and never mixes them.",
+        value: "B",
+        score: { independence: 6, togetherness: 2, balance: 3 }
+      },
+      {
+        label: "The couple has a shared life and interests, but each partner also has their own friends, hobbies, and personal space.",
+        value: "C",
+        score: { independence: 9, balance: 9, respect: 8, trust: 7 }
+      },
+      {
+        label: "The couple is so codependent that they can't function without each other.",
+        value: "D",
+        score: { independence: 1, balance: 1, codependency: 8 }
+      }
+    ]
+  },
+  {
+    id: 24,
+    category: "Independence & Individuality",
+    question: "Your partner wants to take a solo trip. How do you respond in a way that shows trust and respects their need for independence?",
+    options: [
+      {
+        label: "Are you sure you want to go alone? I'll miss you too much.",
+        value: "A",
+        score: { independence: 4, trust: 5, attachment: 6 }
+      },
+      {
+        label: "That's wonderful! I can't wait to hear all about it when you get back.",
+        value: "B",
+        score: { independence: 9, trust: 9, support: 8, respect: 8 }
+      },
+      {
+        label: "I'm not comfortable with that. Can't I come with you?",
+        value: "C",
+        score: { independence: 2, trust: 3, insecurity: 6 }
+      },
+      {
+        label: "Is everything okay? Why do you need to get away from me?",
+        value: "D",
+        score: { independence: 1, trust: 2, insecurity: 8, communication: 3 }
+      }
+    ]
+  },
+  {
+    id: 25,
+    category: "Independence & Individuality",
+    question: "What is the psychological term for a relationship where two people become so enmeshed they lose their sense of self?",
+    options: [
+      {
+        label: "Interdependence.",
+        value: "A",
+        score: { independence: 5, knowledge: 4 }
+      },
+      {
+        label: "Co-creation.",
+        value: "B",
+        score: { knowledge: 2 }
+      },
+      {
+        label: "Codependency.",
+        value: "C",
+        score: { independence: 8, knowledge: 9, awareness: 8 }
+      },
+      {
+        label: "Autonomy.",
+        value: "D",
+        score: { knowledge: 3 }
+      }
+    ]
+  },
+
+  // Patience & Forgiveness
+  {
+    id: 26,
+    category: "Patience & Forgiveness",
+    question: "Your partner makes the same small mistake again that you've talked about before. What's the most patient and productive response?",
+    options: [
+      {
+        label: "You always do this! I can't believe it.",
+        value: "A",
+        score: { patience: 1, communication: 2, respect: 2 }
+      },
+      {
+        label: "Take a deep breath and say, 'I'm feeling frustrated right now. Can we talk about this later?'",
+        value: "B",
+        score: { patience: 9, communication: 8, self_control: 8, respect: 7 }
+      },
+      {
+        label: "Ignore it and pretend it didn't happen to avoid a fight.",
+        value: "C",
+        score: { patience: 4, communication: 2, avoidance: 6 }
+      },
+      {
+        label: "Immediately bring up all the other mistakes they've made in the past.",
+        value: "D",
+        score: { patience: 1, forgiveness: 1, communication: 1, respect: 1 }
+      }
+    ]
+  },
+  {
+    id: 27,
+    category: "Patience & Forgiveness",
+    question: "Your partner says something hurtful in the heat of an argument and immediately apologizes. What does genuine forgiveness look like?",
+    options: [
+      {
+        label: "Forgetting it and never mentioning it again.",
+        value: "A",
+        score: { forgiveness: 5, communication: 3, healing: 4 }
+      },
+      {
+        label: "Saying 'I forgive you' but holding a grudge internally.",
+        value: "B",
+        score: { forgiveness: 2, honesty: 2, resentment: 6 }
+      },
+      {
+        label: "Acknowledging their apology and consciously letting go of the anger, while also communicating a clear boundary about future behavior.",
+        value: "C",
+        score: { forgiveness: 9, communication: 9, respect: 8, accountability: 7 }
+      },
+      {
+        label: "Demanding that they promise to never do it again.",
+        value: "D",
+        score: { forgiveness: 4, trust: 3, control: 6 }
+      }
+    ]
+  },
+  {
+    id: 28,
+    category: "Patience & Forgiveness",
+    question: "Patience in a relationship is best described as...",
+    options: [
+      {
+        label: "Never getting upset.",
+        value: "A",
+        score: { patience: 4, emotional_control: 3, unrealistic: 5 }
+      },
+      {
+        label: "Tolerating everything without complaint.",
+        value: "B",
+        score: { patience: 3, boundaries: 2, self_respect: 2 }
+      },
+      {
+        label: "The ability to respond thoughtfully and calmly to a partner's flaws or mistakes over time.",
+        value: "C",
+        score: { patience: 9, wisdom: 8, maturity: 8, communication: 7 }
+      },
+      {
+        label: "Waiting for your partner to change and meet your expectations.",
+        value: "D",
+        score: { patience: 4, acceptance: 3, control: 6 }
+      }
+    ]
+  },
+  {
+    id: 29,
+    category: "Patience & Forgiveness",
+    question: "Your partner has been struggling with a personal issue and it's making them a little distant and irritable. You're beginning to feel a little neglected. What's the best way to handle this?",
+    options: [
+      {
+        label: "Tell them you're feeling neglected and that they need to snap out of it.",
+        value: "A",
+        score: { patience: 2, empathy: 2, support: 2, communication: 3 }
+      },
+      {
+        label: "Give them the silent treatment until they notice your mood.",
+        value: "B",
+        score: { patience: 2, communication: 1, passive_aggression: 7 }
+      },
+      {
+        label: "Acknowledge their struggle and practice patience, while gently expressing your needs and asking for a small amount of dedicated time together.",
+        value: "C",
+        score: { patience: 9, empathy: 8, communication: 9, support: 7, balance: 8 }
+      },
+      {
+        label: "Assume they no longer care about you.",
+        value: "D",
+        score: { patience: 1, trust: 2, insecurity: 8, communication: 1 }
+      }
+    ]
+  },
+  {
+    id: 30,
+    category: "Patience & Forgiveness",
+    question: "What is the psychological benefit of active forgiveness in a relationship?",
+    options: [
+      {
+        label: "It shows you are the 'bigger' person.",
+        value: "A",
+        score: { forgiveness: 4, ego: 5, healing: 3 }
+      },
+      {
+        label: "It reduces your own resentment, stress, and anger, and fosters a deeper connection.",
+        value: "B",
+        score: { forgiveness: 9, healing: 9, intimacy: 8, wellbeing: 8 }
+      },
+      {
+        label: "It means you can forget the event ever happened.",
+        value: "C",
+        score: { forgiveness: 3, denial: 5, healing: 2 }
+      },
+      {
+        label: "It proves the other person's apology was sincere.",
+        value: "D",
+        score: { forgiveness: 4, validation: 4, trust: 3 }
+      }
+    ]
+  },
+
+  // Healthy Conflict Resolution
+  {
+    id: 31,
+    category: "Healthy Conflict Resolution",
+    question: "During an argument, your partner starts to raise their voice. What is the most effective way to de-escalate the situation?",
+    options: [
+      {
+        label: "Raise your voice back so they understand how you feel.",
+        value: "A",
+        score: { communication: 2, conflict_resolution: 2, escalation: 7 }
+      },
+      {
+        label: "Say, 'I am feeling overwhelmed by the volume. Can we please take a moment to lower our voices?'",
+        value: "B",
+        score: { communication: 9, conflict_resolution: 9, respect: 8, self_advocacy: 7 }
+      },
+      {
+        label: "Say, 'You're always so loud when you're angry.'",
+        value: "C",
+        score: { communication: 3, conflict_resolution: 2, criticism: 6 }
+      },
+      {
+        label: "Walk away and refuse to continue the conversation.",
+        value: "D",
+        score: { conflict_resolution: 4, avoidance: 6, communication: 3 }
+      }
+    ]
+  },
+  {
+    id: 32,
+    category: "Healthy Conflict Resolution",
+    question: "You and your partner are in a disagreement. How can you ensure the conversation stays focused on the issue and doesn't become a personal attack?",
+    options: [
+      {
+        label: "Use 'you' statements to explain how their behavior is affecting you.",
+        value: "A",
+        score: { communication: 4, conflict_resolution: 4, blame: 5 }
+      },
+      {
+        label: "Stick to 'I' statements, focusing on your own feelings and needs, e.g., 'I feel hurt when...'",
+        value: "B",
+        score: { communication: 9, conflict_resolution: 9, responsibility: 8, respect: 7 }
+      },
+      {
+        label: "Bring up past conflicts to show a pattern of behavior.",
+        value: "C",
+        score: { communication: 2, conflict_resolution: 2, resentment: 7 }
+      },
+      {
+        label: "Insist on being right and don't back down.",
+        value: "D",
+        score: { communication: 2, conflict_resolution: 1, stubbornness: 8 }
+      }
+    ]
+  },
+  {
+    id: 33,
+    category: "Healthy Conflict Resolution",
+    question: "A core tenet of healthy conflict resolution is...",
+    options: [
+      {
+        label: "Never going to bed angry.",
+        value: "A",
+        score: { conflict_resolution: 5, timing: 4, pressure: 4 }
+      },
+      {
+        label: "Winning the argument at all costs.",
+        value: "B",
+        score: { conflict_resolution: 1, competitiveness: 8, respect: 1 }
+      },
+      {
+        label: "The willingness to understand your partner's perspective, even if you disagree.",
+        value: "C",
+        score: { communication: 9, empathy: 9, conflict_resolution: 9, respect: 8 }
+      },
+      {
+        label: "Avoiding all conflict to keep the peace.",
+        value: "D",
+        score: { conflict_resolution: 3, avoidance: 7, communication: 2 }
+      }
+    ]
+  },
+  {
+    id: 34,
+    category: "Healthy Conflict Resolution",
+    question: "After a major disagreement, how do you repair the relationship and rebuild trust?",
+    options: [
+      {
+        label: "Demand an apology from your partner.",
+        value: "A",
+        score: { conflict_resolution: 3, control: 6, repair: 2 }
+      },
+      {
+        label: "Ignore the conflict and act like nothing happened.",
+        value: "B",
+        score: { conflict_resolution: 2, avoidance: 7, repair: 1 }
+      },
+      {
+        label: "Apologize for your part in the conflict, acknowledge their feelings, and discuss how to prevent a similar situation in the future.",
+        value: "C",
+        score: { accountability: 9, conflict_resolution: 9, empathy: 8, communication: 8, repair: 9 }
+      },
+      {
+        label: "Give them space until they come to you.",
+        value: "D",
+        score: { conflict_resolution: 4, avoidance: 5, repair: 3 }
+      }
+    ]
+  },
+  {
+    id: 35,
+    category: "Healthy Conflict Resolution",
+    question: "What is a key sign of an unhealthy conflict pattern?",
+    options: [
+      {
+        label: "You and your partner have different opinions.",
+        value: "A",
+        score: { understanding: 7, normalcy: 8 }
+      },
+      {
+        label: "One or both partners engage in criticism, defensiveness, contempt, or stonewalling.",
+        value: "B",
+        score: { awareness: 9, conflict_resolution: 8, red_flags: 9 }
+      },
+      {
+        label: "You have to have a difficult conversation.",
+        value: "C",
+        score: { understanding: 6, normalcy: 7 }
+      },
+      {
+        label: "You and your partner agree to disagree on a topic.",
+        value: "D",
+        score: { understanding: 8, maturity: 7 }
+      }
+    ]
+  },
+
+  // Accountability
+  {
+    id: 36,
+    category: "Accountability",
+    question: "You forget to do something important that you promised your partner you'd do. How do you respond with true accountability?",
+    options: [
+      {
+        label: "I know I said I'd do it, but I've been so busy lately.",
+        value: "A",
+        score: { accountability: 3, excuses: 6, responsibility: 2 }
+      },
+      {
+        label: "I'm sorry I forgot. It was my mistake, and I'll make sure to do it right away.",
+        value: "B",
+        score: { accountability: 9, responsibility: 9, commitment: 8, respect: 7 }
+      },
+      {
+        label: "You should have reminded me.",
+        value: "C",
+        score: { accountability: 1, blame: 7, responsibility: 1 }
+      },
+      {
+        label: "It's not a big deal; it can wait.",
+        value: "D",
+        score: { accountability: 2, minimization: 6, respect: 2 }
+      }
+    ]
+  },
+  {
+    id: 37,
+    category: "Accountability",
+    question: "Your partner points out a flaw in your behavior that is causing a problem in the relationship. How do you take accountability?",
+    options: [
+      {
+        label: "Get defensive and explain why you're not at fault.",
+        value: "A",
+        score: { accountability: 1, defensiveness: 8, growth: 2 }
+      },
+      {
+        label: "Acknowledge their perspective and honestly examine your behavior without making excuses.",
+        value: "B",
+        score: { accountability: 9, self_reflection: 9, growth: 8, respect: 8 }
+      },
+      {
+        label: "Say, 'I'm sorry you feel that way,' and then change the subject.",
+        value: "C",
+        score: { accountability: 2, avoidance: 6, invalidation: 5 }
+      },
+      {
+        label: "Agree with them to avoid an argument, but don't intend to change.",
+        value: "D",
+        score: { accountability: 2, dishonesty: 6, avoidance: 5 }
+      }
+    ]
+  },
+  {
+    id: 38,
+    category: "Accountability",
+    question: "What is the psychological difference between a 'sorry' and an 'I take accountability?'",
+    options: [
+      {
+        label: "There is no difference; they mean the same thing.",
+        value: "A",
+        score: { understanding: 3, depth: 2 }
+      },
+      {
+        label: "'Sorry' is a quick fix, while 'I take accountability' involves recognizing one's own role in the harm caused and committing to corrective action.",
+        value: "B",
+        score: { accountability: 9, understanding: 9, depth: 8, growth: 8 }
+      },
+      {
+        label: "'Sorry' is more polite.",
+        value: "C",
+        score: { understanding: 2, depth: 1 }
+      },
+      {
+        label: "'I take accountability' is a more formal phrase used in business.",
+        value: "D",
+        score: { understanding: 3, context: 2 }
+      }
+    ]
+  },
+  {
+    id: 39,
+    category: "Accountability",
+    question: "Your partner apologizes for something that hurt you. How do you encourage them to continue taking accountability in the future?",
+    options: [
+      {
+        label: "Immediately forgive them without talking about the impact of their actions.",
+        value: "A",
+        score: { encouragement: 4, closure: 3, learning: 2 }
+      },
+      {
+        label: "Express gratitude for their apology and acknowledge that it took courage.",
+        value: "B",
+        score: { encouragement: 9, positive_reinforcement: 8, respect: 8, growth: 7 }
+      },
+      {
+        label: "Tell them, 'It's about time you apologized.'",
+        value: "C",
+        score: { encouragement: 2, resentment: 6, discouragement: 5 }
+      },
+      {
+        label: "Say, 'You're only apologizing because you got caught.'",
+        value: "D",
+        score: { encouragement: 1, mistrust: 7, discouragement: 8 }
+      }
+    ]
+  },
+  {
+    id: 40,
+    category: "Accountability",
+    question: "What's the most challenging aspect of taking accountability in a relationship?",
+    options: [
+      {
+        label: "Admitting you're wrong and overcoming the ego's need to be 'right.'",
+        value: "A",
+        score: { accountability: 9, self_awareness: 9, ego: 8, growth: 8 }
+      },
+      {
+        label: "Remembering what you did wrong.",
+        value: "B",
+        score: { accountability: 3, memory: 4, understanding: 3 }
+      },
+      {
+        label: "Finding the right words to say 'I'm sorry.'",
+        value: "C",
+        score: { accountability: 4, communication: 4, superficial: 5 }
+      },
+      {
+        label: "Convincing your partner to forgive you.",
+        value: "D",
+        score: { accountability: 3, manipulation: 5, outcome_focus: 6 }
+      }
+    ]
+  },
+
+  // Equality
+  {
+    id: 41,
+    category: "Equality",
+    question: "You and your partner both work. Your partner expects you to do all the housework because they believe it's 'traditionally' a woman's job. What's the healthiest way to approach this?",
+    options: [
+      {
+        label: "Do all the housework to avoid conflict.",
+        value: "A",
+        score: { equality: 2, self_respect: 2, avoidance: 6 }
+      },
+      {
+        label: "Refuse to do any housework until they help.",
+        value: "B",
+        score: { equality: 4, conflict: 5, stubbornness: 6 }
+      },
+      {
+        label: "Discuss a fair division of labor based on shared responsibility and a balanced workload, not gender roles.",
+        value: "C",
+        score: { equality: 9, communication: 8, fairness: 9, respect: 8 }
+      },
+      {
+        label: "Hire a cleaner and split the cost.",
+        value: "D",
+        score: { equality: 6, problem_solving: 7, avoidance: 4 }
+      }
+    ]
+  },
+  {
+    id: 42,
+    category: "Equality",
+    question: "What is a key sign of a psychologically equal partnership?",
+    options: [
+      {
+        label: "One person makes all the decisions.",
+        value: "A",
+        score: { equality: 1, power_imbalance: 8 }
+      },
+      {
+        label: "The person with the higher income has the final say.",
+        value: "B",
+        score: { equality: 2, financial_control: 7 }
+      },
+      {
+        label: "Both partners feel they have an equal voice and a say in major and minor decisions.",
+        value: "C",
+        score: { equality: 9, respect: 8, partnership: 9, balance: 8 }
+      },
+      {
+        label: "Decisions are made based on who is more knowledgeable on the topic.",
+        value: "D",
+        score: { equality: 6, logic: 6, expertise: 5 }
+      }
+    ]
+  },
+  {
+    id: 43,
+    category: "Equality",
+    question: "Your partner has a different opinion on how to handle a financial matter. What's the most equal way to resolve this?",
+    options: [
+      {
+        label: "The person who earns more money gets to decide.",
+        value: "A",
+        score: { equality: 2, financial_control: 7, hierarchy: 6 }
+      },
+      {
+        label: "You convince them that your way is the best.",
+        value: "B",
+        score: { equality: 3, persuasion: 5, respect: 3 }
+      },
+      {
+        label: "You both present your viewpoints, listen to each other's reasoning, and find a solution that you both feel is fair and beneficial.",
+        value: "C",
+        score: { equality: 9, communication: 9, respect: 8, collaboration: 9 }
+      },
+      {
+        label: "You compromise by letting them get their way, but you get to make the next financial decision.",
+        value: "D",
+        score: { equality: 5, compromise: 6, turn_taking: 5 }
+      }
+    ]
+  },
+  {
+    id: 44,
+    category: "Equality",
+    question: "A healthy, equal relationship is best described as a partnership built on a foundation of...",
+    options: [
+      {
+        label: "Competition.",
+        value: "A",
+        score: { equality: 3, competition: 7, partnership: 2 }
+      },
+      {
+        label: "A quid pro quo system of give and take.",
+        value: "B",
+        score: { equality: 5, transactional: 6, balance: 4 }
+      },
+      {
+        label: "Shared power and mutual respect.",
+        value: "C",
+        score: { equality: 9, respect: 9, partnership: 9, balance: 8 }
+      },
+      {
+        label: "One person being the 'head' and the other being the 'neck.'",
+        value: "D",
+        score: { equality: 2, hierarchy: 7, traditional: 5 }
+      }
+    ]
+  },
+  {
+    id: 45,
+    category: "Equality",
+    question: "You and your partner are planning your weekend. You want to go hiking, and they want to see a movie. What is the most equal way to decide?",
+    options: [
+      {
+        label: "Flip a coin.",
+        value: "A",
+        score: { equality: 6, fairness: 6, randomness: 7 }
+      },
+      {
+        label: "Insist on going hiking since you came up with the idea first.",
+        value: "B",
+        score: { equality: 2, selfishness: 6, fairness: 2 }
+      },
+      {
+        label: "Do one of your activities this weekend and the other next weekend, as long as you're both happy with the plan.",
+        value: "C",
+        score: { equality: 9, fairness: 8, planning: 7, balance: 8 }
+      },
+      {
+        label: "Decide to stay in and not do anything.",
+        value: "D",
+        score: { equality: 4, avoidance: 6, compromise: 3 }
+      }
+    ]
+  },
+
+  // Trust
+  {
+    id: 46,
+    category: "Trust",
+    question: "Your partner is often late and cancels plans at the last minute. This behavior is eroding your trust. What's the most constructive way to address this?",
+    options: [
+      {
+        label: "Stop making plans with them.",
+        value: "A",
+        score: { communication: 2, avoidance: 6, trust: 3 }
+      },
+      {
+        label: "Yell at them the next time they're late.",
+        value: "B",
+        score: { communication: 2, conflict: 7, trust: 2 }
+      },
+      {
+        label: "Calmly explain how their actions are affecting you and ask if there's a reason for the behavior, while setting a new boundary.",
+        value: "C",
+        score: { trust: 8, communication: 9, respect: 8, boundaries: 8 }
+      },
+      {
+        label: "Start showing up late to your own plans to show them how it feels.",
+        value: "D",
+        score: { trust: 2, passive_aggression: 7, maturity: 2 }
+      }
+    ]
+  },
+  {
+    id: 47,
+    category: "Trust",
+    question: "Your partner finds out you've shared something private about them with a friend. How do you rebuild their trust?",
+    options: [
+      {
+        label: "Tell them you're sorry and it won't happen again.",
+        value: "A",
+        score: { trust: 4, accountability: 4, depth: 3 }
+      },
+      {
+        label: "Defend yourself by saying, 'It's not a big deal; my friend can be trusted.'",
+        value: "B",
+        score: { trust: 1, defensiveness: 7, respect: 2 }
+      },
+      {
+        label: "Acknowledge that you broke their trust, apologize for the specific action, and explain what steps you'll take to ensure it never happens again.",
+        value: "C",
+        score: { trust: 9, accountability: 9, repair: 8, respect: 8 }
+      },
+      {
+        label: "Insist that they're overreacting and that you can't be trusted with anything.",
+        value: "D",
+        score: { trust: 1, defensiveness: 6, self_pity: 5 }
+      }
+    ]
+  },
+  {
+    id: 48,
+    category: "Trust",
+    question: "A key component of psychological trust in a relationship is...",
+    options: [
+      {
+        label: "Knowing your partner will never make a mistake.",
+        value: "A",
+        score: { trust: 3, unrealistic: 6, perfectionism: 5 }
+      },
+      {
+        label: "Having complete control over your partner's actions.",
+        value: "B",
+        score: { trust: 2, control: 8, unhealthy: 7 }
+      },
+      {
+        label: "The belief that your partner has your best interests at heart and will consistently act in a reliable and honest way.",
+        value: "C",
+        score: { trust: 9, reliability: 8, love: 7, security: 8 }
+      },
+      {
+        label: "The ability to read your partner's mind.",
+        value: "D",
+        score: { trust: 2, fantasy: 6, unrealistic: 5 }
+      }
+    ]
+  },
+  {
+    id: 49,
+    category: "Trust",
+    question: "Your partner feels you've broken their trust. What's the first step toward rebuilding it?",
+    options: [
+      {
+        label: "Immediately defend your actions and explain your side.",
+        value: "A",
+        score: { trust: 2, defensiveness: 7, repair: 2 }
+      },
+      {
+        label: "Minimize the issue so they don't get too upset.",
+        value: "B",
+        score: { trust: 1, minimization: 6, respect: 2 }
+      },
+      {
+        label: "Validate their feelings and acknowledge the hurt you've caused before attempting to explain yourself.",
+        value: "C",
+        score: { trust: 9, empathy: 8, repair: 8, respect: 8 }
+      },
+      {
+        label: "Give them space until they're no longer angry.",
+        value: "D",
+        score: { trust: 4, avoidance: 6, repair: 3 }
+      }
+    ]
+  },
+  {
+    id: 50,
+    category: "Trust",
+    question: "What is the most insidious psychological threat to trust in a relationship?",
+    options: [
+      {
+        label: "A single, honest mistake.",
+        value: "A",
+        score: { understanding: 6, normalcy: 7 }
+      },
+      {
+        label: "A pattern of small, seemingly insignificant lies or broken promises over time.",
+        value: "B",
+        score: { trust: 8, awareness: 9, erosion: 8, vigilance: 7 }
+      },
+      {
+        label: "Disagreeing on a minor issue.",
+        value: "C",
+        score: { understanding: 7, normalcy: 8 }
+      },
+      {
+        label: "Getting into a single argument.",
+        value: "D",
+        score: { understanding: 6, normalcy: 7 }
+      }
+    ]
+  },
+
+  // Respect
+  {
+    id: 51,
+    category: "Respect",
+    question: "Your partner is trying to explain their feelings to you, but you feel they're being irrational. What is the most respectful response?",
+    options: [
+      {
+        label: "You're not making any sense right now.",
+        value: "A",
+        score: { respect: 1, empathy: 2, communication: 2 }
+      },
+      {
+        label: "I understand that you feel that way. Help me understand why.",
+        value: "B",
+        score: { respect: 9, empathy: 8, communication: 9, curiosity: 7 }
+      },
+      {
+        label: "Let's stop talking about this; it's getting silly.",
+        value: "C",
+        score: { respect: 2, dismissal: 6, communication: 2 }
+      },
+      {
+        label: "You're overreacting, and I don't see your point.",
+        value: "D",
+        score: { respect: 1, invalidation: 7, empathy: 2 }
+      }
+    ]
+  },
+  {
+    id: 52,
+    category: "Respect",
+    question: "You and your partner have different religious beliefs. How do you show respect for their individuality and beliefs?",
+    options: [
+      {
+        label: "Try to convert them to your way of thinking.",
+        value: "A",
+        score: { respect: 1, control: 6, acceptance: 2 }
+      },
+      {
+        label: "Tell them their beliefs are foolish.",
+        value: "B",
+        score: { respect: 1, intolerance: 8, hurtful: 7 }
+      },
+      {
+        label: "Actively listen to their experiences and celebrate their beliefs without feeling the need to agree or adopt them.",
+        value: "C",
+        score: { respect: 9, acceptance: 9, curiosity: 8, love: 7 }
+      },
+      {
+        label: "Avoid any and all conversations about religion.",
+        value: "D",
+        score: { respect: 5, avoidance: 6, communication: 3 }
+      }
+    ]
+  },
+  {
+    id: 53,
+    category: "Respect",
+    question: "What's a key sign of a relationship that lacks respect?",
+    options: [
+      {
+        label: "Occasional disagreements.",
+        value: "A",
+        score: { understanding: 8, normalcy: 8 }
+      },
+      {
+        label: "One partner consistently belittles the other's opinions, feelings, or interests.",
+        value: "B",
+        score: { respect: 8, awareness: 9, red_flags: 9, abuse: 7 }
+      },
+      {
+        label: "You have to work through a difficult situation.",
+        value: "C",
+        score: { understanding: 7, normalcy: 8 }
+      },
+      {
+        label: "You and your partner have different friends.",
+        value: "D",
+        score: { understanding: 6, independence: 6 }
+      }
+    ]
+  },
+  {
+    id: 54,
+    category: "Respect",
+    question: "Your partner has a boundary you don't fully understand. What is the most respectful way to handle it?",
+    options: [
+      {
+        label: "Assume the boundary is a sign that they don't trust you.",
+        value: "A",
+        score: { respect: 3, insecurity: 6, assumption: 5 }
+      },
+      {
+        label: "Push the boundary to see if they're serious.",
+        value: "B",
+        score: { respect: 1, violation: 8, testing: 6 }
+      },
+      {
+        label: "Accept the boundary and its importance to them without needing to fully understand the reason, and ask them how you can best honor it.",
+        value: "C",
+        score: { respect: 9, acceptance: 9, support: 8, maturity: 8 }
+      },
+      {
+        label: "Tell them their boundary is unreasonable and that they should change it.",
+        value: "D",
+        score: { respect: 1, control: 7, invalidation: 6 }
+      }
+    ]
+  },
+  {
+    id: 55,
+    category: "Respect",
+    question: "What does genuine respect for your partner's time look like?",
+    options: [
+      {
+        label: "Always being on time, no matter what.",
+        value: "A",
+        score: { respect: 6, perfectionism: 5, unrealistic: 4 }
+      },
+      {
+        label: "Making a concerted effort to be on time, communicating proactively when you're running late, and not leaving them waiting.",
+        value: "B",
+        score: { respect: 9, consideration: 9, communication: 8, reliability: 8 }
+      },
+      {
+        label: "Telling them that their time isn't as valuable as yours.",
+        value: "C",
+        score: { respect: 1, arrogance: 8, devaluation: 7 }
+      },
+      {
+        label: "Showing up whenever you feel like it because they should understand.",
+        value: "D",
+        score: { respect: 1, selfishness: 7, inconsideration: 8 }
+      }
+    ]
+  }
+];
